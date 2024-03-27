@@ -1,3 +1,33 @@
-:host {
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 35em;
+}
+
+.list li {
+  position: relative;
+  cursor: pointer;
+}
+
+.list li:hover {
+  left: .1em;
+}
+
+
+.left-side{
+  width: 80%;
+}
+
+.dropzone{
+  border: 1px orangered solid;
+  border-radius: 5px;
+  padding: 15px;
   display: block;
+}
+
+.m-15{
+  margin: 15px !important;
 }

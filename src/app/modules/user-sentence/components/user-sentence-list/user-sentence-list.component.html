@@ -1,0 +1,11 @@
+<div class="card">
+  <h5 class="card-title">The list of all the created sentences lazy loaded</h5>
+  <div class="card-body">
+    <div class="row" *ngFor="let item of itemsUserSentence">
+      <span class="bolder-text pill mt-3 mb-1">{{item.text}}</span>
+    </div>
+    <div *ngIf="showLoadButton" class="card-footer">
+      <span role="button" (click)="loadNextPage()" type="button" class="btn btn-success">Load more</span>
+    </div>
+  </div>
+</div>

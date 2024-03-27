@@ -1,0 +1,43 @@
+<div class="card mb-5">
+<div class="card-body">
+<!--a draggable element-->
+<div class="word-selection ">
+  <ul class="list">
+    <li *ngFor="let item of wordList">
+      <div class="pill"
+      [dndDraggable]="item"
+      [dndEffectAllowed]="draggable.effectAllowed"
+      [dndDisableIf]="draggable.disable"
+      (dndStart)="onDragStart($event)">
+      <!--optionally select a child element as drag image-->
+      <div dndDragImageRef><span class="badge text-bg-primary">{{item.word}}</span></div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+<!--a dropzone-->
+<!--to allow dropping content that is not [dndDraggable] set dndAllowExternal to true-->
+<section class="mt-5 mb-3"
+  dndDropzone
+  (dndDrop)="onDrop($event)">
+
+  <div><span class="pill">Drag and drop a word from the list above to create a sentence</span></div>
+  <!--optional placeholder element for dropzone-->
+  <!--will be removed from DOM on init-->
+  <div class="dropzone"
+    dndPlaceholderRef>
+    {{sentenceText}}
+  </div>
+
+</section>
+
+<div class="mt-5 mb-5" *ngIf="sentenceText"><span class="pill">{{sentenceText}}</span></div>
+</div>
+<div class="card-footer">
+  <button (click)="save()" type="button" class="btn btn-success">Save sentence</button>
+</div>
+</div>
+
+
+

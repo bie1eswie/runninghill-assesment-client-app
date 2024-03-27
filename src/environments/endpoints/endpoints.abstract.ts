@@ -4,6 +4,7 @@ export abstract class AbstractEndpoints {
 
     wordItem!: IWordItemEndpoints;
     userSentence!: UserSentenceEndpoints;
+    wordGroup!: IWordGroupEndpoints
 
     constructor() { }
 }
@@ -14,4 +15,8 @@ export interface IWordItemEndpoints {
 export interface UserSentenceEndpoints {
   getUserSentences(pageNumber: number): string;
   createUserSentence: string;
+}
+
+export interface IWordGroupEndpoints {
+  getWordGroups(): string;
 }

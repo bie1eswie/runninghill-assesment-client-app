@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `<p>word-item-details works!</p>`,
+  templateUrl: './word-item-details.component.html',
   styleUrl: './word-item-details.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

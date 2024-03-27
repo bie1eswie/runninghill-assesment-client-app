@@ -7,12 +7,12 @@ import { Endpoints } from './endpoints';
 import { AbstractEndpoints } from './endpoints.abstract';
 import { EndpointsMock } from './endpoints.mock';
 
-export function FactoryEndpoints(serviceConfig: ServiceConfig, serviceMonitor: AbstractServiceMonitoring): AbstractEndpoints {
+export function FactoryEndpoints(serviceMonitor: AbstractServiceMonitoring): AbstractEndpoints {
     serviceMonitor.LogEvent('FactoryEndpoints', 'Endpoints Factory loaded');
     switch (AppSettings.environment) {
         case Enums.Environments.MockData:
-            return new EndpointsMock(serviceConfig);
+            return new EndpointsMock();
         default:
-            return new Endpoints(serviceConfig);
+            return new Endpoints();
     }
 }

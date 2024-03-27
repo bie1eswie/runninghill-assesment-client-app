@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `<p>new-user-sentence works!</p>`,
+  templateUrl: './new-user-sentence.component.html',
   styleUrl: './new-user-sentence.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

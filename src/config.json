@@ -1,0 +1,10 @@
+{
+    "$schema": "./environments/config/config.schema.json",
+    "apiBaseURL": "https://elevate-assesment-api.azurewebsites.net",
+    "logging": {
+        "errorLogTo": [
+            "console"
+        ],
+        "loggingLevel": "info"
+    }
+}

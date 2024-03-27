@@ -21,15 +21,13 @@ export class ServiceConfig implements IConfig {
     this.http = new HttpClient(httpHandler);
     Object.assign(this, InitializeConfig());
   }
-  // This method must return a promise for the APP_INITIALIZER to work correctly
+
   loadConfig(): Promise<void> {
-    const observable = this.http.get<IConfig>(AppSettings.configFileLocation)
+    const observable = this.http.get<IConfig>("../../../config.json")
     var promise = firstValueFrom(observable);
     return promise
       .then((config: IConfig) => {
         this.apiBaseURL = config.apiBaseURL;
-        this.appInsightsKey = config.appInsightsKey;
-        this.humanAPIClientId = config.humanAPIClientId;
         switch (config.logging.loggingLevel) {
           case 'info':
             this.logging.loggingLevel = Enums.ErrorSeverityLevel.Info;

@@ -4,9 +4,7 @@ import { ErrorSeverityLevel } from "../../app/enums/error-severity-level.enum";
 
 export function InitializeConfig(): IConfig {
     const config: IConfig = {
-        apiBaseURL: '',
-        appInsightsKey: '',
-        humanAPIClientId: '',
+        apiBaseURL: 'http://localhost:5074',
         logging: {
             errorLogTo: ['console', 'appInsights'],
             loggingLevel: Enums.ErrorSeverityLevel.Error
@@ -17,9 +15,7 @@ export function InitializeConfig(): IConfig {
 
 export interface IConfig {
     apiBaseURL: string;
-    appInsightsKey: string;
     logging: ILogging;
-    humanAPIClientId: string;
 }
 
 export interface ILogging {

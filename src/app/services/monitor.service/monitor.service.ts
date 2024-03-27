@@ -10,10 +10,9 @@ export class ServiceMonitoring extends AbstractServiceMonitoring {
 
   loggingLevel = Enums.ErrorSeverityLevel.Info;
 
-  constructor(private serviceConfig: ServiceConfig) {
+  constructor() {
     super();
-    this.loggingLevel = serviceConfig.logging
-      .loggingLevel as ErrorSeverityLevel;
+    this.loggingLevel = ErrorSeverityLevel.Error;
   }
 
  override LogEvent(
